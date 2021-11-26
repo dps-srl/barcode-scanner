@@ -2,11 +2,10 @@ import { WebPlugin } from '@capacitor/core';
 
 import type {
   BarcodeScannerPlugin,
-  ScanOptions,
-  ScanResult,
   CheckPermissionOptions,
   CheckPermissionResult,
-  StopScanOptions,
+  ScanOptions,
+  ScanResult,
 } from './definitions';
 
 export class BarcodeScannerWeb
@@ -22,6 +21,14 @@ export class BarcodeScannerWeb
 
   async showBackground(): Promise<void> {
     throw this.unimplemented('Not implemented on web.');
+  }
+
+  async enableTorch(): Promise<void> {
+    throw new Error('method not available in web');
+  }
+
+  async disableTorch(): Promise<void> {
+    throw new Error('method not available in web');
   }
 
   async startScan(_options: ScanOptions): Promise<ScanResult> {

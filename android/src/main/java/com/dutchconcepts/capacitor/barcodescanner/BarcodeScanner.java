@@ -348,6 +348,7 @@ public class BarcodeScanner extends Plugin implements BarcodeCallback {
 
     @PluginMethod
     public void disableTorch(PluginCall call) {
+        setTorch(false);
         call.resolve();
     }
 

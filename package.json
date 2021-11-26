@@ -1,6 +1,6 @@
 {
   "name": "capacitor-barcode-scanner-torch",
-  "version": "2.1.0-alpha.0",
+  "version": "2.1.0-alpha.1",
   "description": "A fast and efficient (QR) barcode scanner for Capacitor (now with WIP torch feature)",
   "main": "dist/plugin.js",
   "module": "dist/esm/index.js",

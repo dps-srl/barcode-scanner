@@ -1,4 +1,4 @@
-import { WebPlugin } from '@capacitor/core';
+import {WebPlugin} from '@capacitor/core';
 
 import type {
   BarcodeScannerPlugin,
@@ -35,7 +35,7 @@ export class BarcodeScannerWeb
     throw this.unimplemented('Not implemented on web.');
   }
 
-  async stopScan(_options?: StopScanOptions): Promise<void> {
+  async stopScan(): Promise<void> {
     throw this.unimplemented('Not implemented on web.');
   }
 

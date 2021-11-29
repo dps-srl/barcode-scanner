@@ -186,7 +186,7 @@ public class BarcodeScanner: CAPPlugin, AVCaptureMetadataOutputObjectsDelegate {
 
     private func createCaptureDeviceInput(cameraDirection: String? = "back") throws -> AVCaptureDeviceInput {
         var captureDevice: AVCaptureDevice
-        if(cameraDirection == "back"){{
+        if(cameraDirection == "back"){
             if(backCamera != nil){
                 captureDevice = backCamera!
             } else {

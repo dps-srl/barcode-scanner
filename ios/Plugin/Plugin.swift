@@ -134,8 +134,9 @@ public class BarcodeScanner: CAPPlugin, AVCaptureMetadataOutputObjectsDelegate {
         return false;
     }
 
-    private func setupCamera() -> Bool {
+    private func setupCamera(cameraDirection: String? = "back") -> Bool {
         do {
+            var cameraDir = cameraDirection
             cameraView.backgroundColor = UIColor.clear
             self.webView!.superview!.insertSubview(cameraView, belowSubview: self.webView!)
             
@@ -149,11 +150,17 @@ public class BarcodeScanner: CAPPlugin, AVCaptureMetadataOutputObjectsDelegate {
                 }
             }
             // older iPods have no back camera
-            if(backCamera == nil){
-                currentCamera = 1
+            if (cameraDir == "back") {
+                if (backCamera == nil) {
+                    cameraDir = "front"
+                }
+            } else {
+                if (frontCamera == nil) {
+                    cameraDir = "back"
+                }
             }
             let input: AVCaptureDeviceInput
-            input = try self.createCaptureDeviceInput()
+            input = try self.createCaptureDeviceInput(cameraDirection: cameraDir)
             captureSession = AVCaptureSession()
             captureSession!.addInput(input)
             metaOutput = AVCaptureMetadataOutput()
